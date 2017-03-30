@@ -153,13 +153,13 @@ def get_mouser_part_html_tree(dist, pn, extra_search_terms='', url=None, descend
 
     # Use the part number to lookup the part using the site search function, unless a starting url was given.
     if url is None:
-        url = 'http://www.mouser.com/Search/Refine.aspx?Keyword=' + urlquote(
+        url = 'http://ca.mouser.com/Search/Refine.aspx?Keyword=' + urlquote(
             pn + ' ' + extra_search_terms,
             safe='')
     elif url[0] == '/':
-        url = 'http://www.mouser.com' + url
+        url = 'http://ca.mouser.com' + url
     elif url.startswith('..'):
-        url = 'http://www.mouser.com/Search/' + url
+        url = 'http://ca.mouser.com/Search/' + url
 
     # Open the URL, read the HTML from it, and parse it into a tree structure.
     req = FakeBrowser(url)

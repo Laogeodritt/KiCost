@@ -162,13 +162,13 @@ def get_newark_part_html_tree(dist, pn, extra_search_terms='', url=None, descend
 
     # Use the part number to lookup the part using the site search function, unless a starting url was given.
     if url is None:
-        url = 'http://www.newark.com/webapp/wcs/stores/servlet/Search?catalogId=15003&langId=-1&storeId=10194&gs=true&st=' + urlquote(
+        url = 'http://canada.newark.com/webapp/wcs/stores/servlet/Search?catalogId=15003&langId=-1&storeId=10194&gs=true&st=' + urlquote(
             pn + ' ' + extra_search_terms,
             safe='')
     elif url[0] == '/':
-        url = 'http://www.newark.com' + url
+        url = 'http://canada.newark.com' + url
     elif url.startswith('..'):
-        url = 'http://www.newark.com/Search/' + url
+        url = 'http://canada.newark.com/Search/' + url
 
     # Open the URL, read the HTML from it, and parse it into a tree structure.
     for _ in range(HTML_RESPONSE_RETRIES):

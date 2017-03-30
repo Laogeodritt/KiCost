@@ -181,12 +181,12 @@ def get_digikey_part_html_tree(dist, pn, extra_search_terms='', url=None, descen
 
     # Use the part number to lookup the part using the site search function, unless a starting url was given.
     if url is None:
-        url = 'http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=' + urlquote(
+        url = 'http://www.digikey.ca/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=' + urlquote(
             pn + ' ' + extra_search_terms,
             safe='')
         #url = 'http://www.digikey.com/product-search/en?KeyWords=' + urlquote(pn,safe='') + '&WT.z_header=search_go'
     elif url[0] == '/':
-        url = 'http://www.digikey.com' + url
+        url = 'http://www.digikey.ca' + url
 
     # Open the URL, read the HTML from it, and parse it into a tree structure.
     req = FakeBrowser(url)
